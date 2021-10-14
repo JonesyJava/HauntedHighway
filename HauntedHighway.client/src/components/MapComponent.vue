@@ -16,7 +16,6 @@ export default {
         center: [-74.5, 40], // starting position [lng, lat]
         zoom: 9 // starting zoom
       })
-      document.getElementById('map').innerHTML = map
     })
     return {}
   },
@@ -25,5 +24,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#map { position: absolute; width: 100%;  }
 
 </style>
