@@ -2,11 +2,11 @@
   <header>
     <Navbar />
   </header>
-  <main>
+  <main class="bg-dark">
     <router-view />
   </main>
   <footer>
-    <div class="bg-dark text-light text-center p-4">
+    <div class="bg-red text-light text-center p-4">
       Made with 💖 by Jonesy and Justin.
     </div>
   </footer>
@@ -26,5 +26,7 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
+.bg-red{
+    background-color: IndianRed;
+}
 </style>
