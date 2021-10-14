@@ -11,8 +11,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.height{
-  height: 20vh;
-}
+// .height{
+//   height: 20vh;
+// }
 
 </style>
