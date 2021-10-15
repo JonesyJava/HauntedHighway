@@ -13,7 +13,7 @@ export default {
       mapboxgl.accessToken = 'pk.eyJ1Ijoiam9uZXN5amF2YSIsImEiOiJja3VyNXdiOG0wamtwMm9wandzY2dzN2JqIn0.chUhEV5TGD43wacx_ktejg'
       const map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: 'mapbox://styles/mapbox/dark-v10', // style URL
         center: [-74.5, 40], // starting position [lng, lat]
         zoom: 9 // starting zoom
       })
