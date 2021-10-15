@@ -1,29 +1,17 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width: 0;height: 0;">
-          <defs>
-            <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-              <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-          </defs>
-        </svg>
-
-        <h1 class="title text-center">
+  <div class="container-fluid bg-image height">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h1 class="glitch"
+            data-text="Haunted Highway"
+        >
           Haunted Highway
-          <span class="drop"></span>
-          <span class="drop"></span>
-          <span class="drop"></span>
-          <span class="drop"></span>
-          <!-- <span class="drop"></span> -->
         </h1>
+        <span class="sub ">hauntfest</span>
       </div>
     </div>
-    <div class="row height align-items-center">
-      <div class="col-12 text-center">
+    <div class="row  align-items-center">
+      <!-- <div class="col-12 text-center">
         <button class="btn btn-warning w-25">
           Login
         </button>
@@ -32,7 +20,7 @@
         <button class="btn btn-danger w-25">
           Create Account
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -44,65 +32,269 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.title {
-  font-weight: 800;
-  font-size: 6vw;
-  margin: 0;
-  // filter: url(#goo);
-  position: relative;
-  font-family: 'Nosifer', cursive;
-  color: IndianRed;
-  text-transform: uppercase;
-}
 
 .height{
   height: 60vh;
 }
 
-.drop {
-  width: .1em; height: .1em;
-  border-radius: 0 100% 100% 100%;
-  background-color: currentColor;
-  position: absolute;
-  top: 72%;
-  animation: drop 3s infinite both;
+//  <----------------------------------Background css ------------------------------------------------->
 
-  &:nth-child(1) {
-    left: 14%;
-  }
-
-  &:nth-child(2) {
-    left: 39%;
-    animation-delay: -.4s;
-  }
-
-  &:nth-child(3) {
-    left: 55%;
-    animation-delay: -1.5s;
-  }
-
-  &:nth-child(4) {
-    left: 82%;
-    animation-delay: -.8s;
-  }
-
-  &:nth-child(5) {
-    left: 95.5%;
-    animation-delay: -1.3s;
-  }
+.bg-image{
+   background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://wallpaperfx.com/view_image/a-haunted-house-movie-1920x1080-wallpaper-16780.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.sub {
+  color: red;
 }
 
-@keyframes drop {
+.glitch {
+  position: relative;
+  color: white;
+  // font-size: 4em;
+  // letter-spacing: 0.5em;
+  /* Animation provies a slight random skew. Check bottom of doc
+  for more information on how to random skew. */
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  /* Creates an initial clip for our glitch. This works in
+  a typical top,right,bottom,left fashion and creates a mask
+  to only show a certain part of the glitch at a time. */
+  clip: rect(44px, 450px, 56px, 0);
+  /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+  with an alternating animation to keep things fresh. */
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+/* Creates an animation with 20 steaps. For each step, it calculates
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
   0% {
-    transform: translateY(0) scaleX(.85) rotate(45deg);
-    animation-timing-function: ease-out;
+    clip: rect(16px, 9999px, 90px, 0);
+    transform: skew(0.45deg);
+  }
+  5% {
+    clip: rect(36px, 9999px, 12px, 0);
+    transform: skew(0.07deg);
+  }
+  10% {
+    clip: rect(8px, 9999px, 20px, 0);
+    transform: skew(0.16deg);
+  }
+  15% {
+    clip: rect(60px, 9999px, 22px, 0);
+    transform: skew(0.95deg);
+  }
+  20% {
+    clip: rect(21px, 9999px, 96px, 0);
+    transform: skew(0.46deg);
+  }
+  25% {
+    clip: rect(74px, 9999px, 28px, 0);
+    transform: skew(0.91deg);
+  }
+  30% {
+    clip: rect(23px, 9999px, 98px, 0);
+    transform: skew(0.31deg);
+  }
+  35% {
+    clip: rect(15px, 9999px, 83px, 0);
+    transform: skew(0.94deg);
+  }
+  40% {
+    clip: rect(63px, 9999px, 92px, 0);
+    transform: skew(0.5deg);
+  }
+  45% {
+    clip: rect(84px, 9999px, 98px, 0);
+    transform: skew(0.13deg);
+  }
+  50% {
+    clip: rect(4px, 9999px, 50px, 0);
+    transform: skew(0.64deg);
+  }
+  55% {
+    clip: rect(23px, 9999px, 37px, 0);
+    transform: skew(0.77deg);
   }
   60% {
-    transform: translateY(120%) scaleX(.85) rotate(45deg);
-    animation-timing-function: ease-in;
+    clip: rect(48px, 9999px, 53px, 0);
+    transform: skew(0.96deg);
   }
-  80%, 100% {
-    transform: translateY(60vh) scaleX(.85) rotate(45deg);
+  65% {
+    clip: rect(96px, 9999px, 57px, 0);
+    transform: skew(0.89deg);
+  }
+  70% {
+    clip: rect(84px, 9999px, 67px, 0);
+    transform: skew(0.72deg);
+  }
+  75% {
+    clip: rect(3px, 9999px, 64px, 0);
+    transform: skew(1deg);
+  }
+  80% {
+    clip: rect(6px, 9999px, 80px, 0);
+    transform: skew(0.35deg);
+  }
+  85% {
+    clip: rect(60px, 9999px, 88px, 0);
+    transform: skew(0.63deg);
+  }
+  90% {
+    clip: rect(15px, 9999px, 61px, 0);
+    transform: skew(0.61deg);
+  }
+  95% {
+    clip: rect(66px, 9999px, 89px, 0);
+    transform: skew(0.99deg);
+  }
+  100% {
+    clip: rect(76px, 9999px, 43px, 0);
+    transform: skew(0.71deg);
+  }
+}
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(68px, 9999px, 8px, 0);
+    transform: skew(0.29deg);
+  }
+  5% {
+    clip: rect(100px, 9999px, 60px, 0);
+    transform: skew(0.17deg);
+  }
+  10% {
+    clip: rect(5px, 9999px, 66px, 0);
+    transform: skew(0.17deg);
+  }
+  15% {
+    clip: rect(75px, 9999px, 88px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(31px, 9999px, 57px, 0);
+    transform: skew(0.84deg);
+  }
+  25% {
+    clip: rect(53px, 9999px, 94px, 0);
+    transform: skew(0.44deg);
+  }
+  30% {
+    clip: rect(98px, 9999px, 78px, 0);
+    transform: skew(0.22deg);
+  }
+  35% {
+    clip: rect(2px, 9999px, 32px, 0);
+    transform: skew(0.03deg);
+  }
+  40% {
+    clip: rect(63px, 9999px, 39px, 0);
+    transform: skew(0.03deg);
+  }
+  45% {
+    clip: rect(73px, 9999px, 40px, 0);
+    transform: skew(0.82deg);
+  }
+  50% {
+    clip: rect(12px, 9999px, 34px, 0);
+    transform: skew(0.44deg);
+  }
+  55% {
+    clip: rect(8px, 9999px, 97px, 0);
+    transform: skew(0.84deg);
+  }
+  60% {
+    clip: rect(59px, 9999px, 100px, 0);
+    transform: skew(0.66deg);
+  }
+  65% {
+    clip: rect(12px, 9999px, 97px, 0);
+    transform: skew(0.2deg);
+  }
+  70% {
+    clip: rect(29px, 9999px, 64px, 0);
+    transform: skew(0.54deg);
+  }
+  75% {
+    clip: rect(9px, 9999px, 39px, 0);
+    transform: skew(0.69deg);
+  }
+  80% {
+    clip: rect(65px, 9999px, 4px, 0);
+    transform: skew(0.28deg);
+  }
+  85% {
+    clip: rect(5px, 9999px, 53px, 0);
+    transform: skew(0.18deg);
+  }
+  90% {
+    clip: rect(62px, 9999px, 33px, 0);
+    transform: skew(0.52deg);
+  }
+  95% {
+    clip: rect(80px, 9999px, 76px, 0);
+    transform: skew(0.98deg);
+  }
+  100% {
+    clip: rect(83px, 9999px, 72px, 0);
+    transform: skew(0.99deg);
+  }
+}
+@keyframes glitch-skew {
+  0% {
+    transform: skew(4deg);
+  }
+  10% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(-2deg);
+  }
+  30% {
+    transform: skew(-3deg);
+  }
+  40% {
+    transform: skew(0deg);
+  }
+  50% {
+    transform: skew(2deg);
+  }
+  60% {
+    transform: skew(-2deg);
+  }
+  70% {
+    transform: skew(2deg);
+  }
+  80% {
+    transform: skew(4deg);
+  }
+  90% {
+    transform: skew(1deg);
+  }
+  100% {
+    transform: skew(-3deg);
   }
 }
 
