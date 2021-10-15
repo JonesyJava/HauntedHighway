@@ -13,12 +13,40 @@ export default {
       mapboxgl.accessToken = 'pk.eyJ1Ijoiam9uZXN5amF2YSIsImEiOiJja3VyNXdiOG0wamtwMm9wandzY2dzN2JqIn0.chUhEV5TGD43wacx_ktejg'
       const map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: 'mapbox://styles/mapbox/dark-v10', // style URL
         center: [-74.5, 40], // starting position [lng, lat]
         zoom: 9 // starting zoom
       })
       // <----------------------------------Establishes geolocations(markerLocations)--------------------->
-      new mapboxgl.Marker().setLngLat([30.5, 50.5]).addTo(map)
+      // const x = new mapboxgl.Marker().setLngLat([30.5, 50.5])
+      // console.log(x)
+      window.map = map
+
+      // -----------------------------------GeoJson source ------------------------>
+      map.on('load', () => {
+        map.addSource('myData', {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: [{
+              type: 'Point',
+              properties: {},
+              geometry: {
+                type: 'Point',
+                coordinates: [
+                  -76.53063297271729,
+                  39.18174077994108
+                ]
+              }
+            }]
+          }
+        })
+        const source = map.getSource('myData')
+        const data = source.serialize()
+        data.data.features.push({ type: 'Point', geometry: { type: 'Point', coordinates: [30.5, 50.5] } })
+        source.setData(data.data)
+        console.log(map.getSource('myData').serialize())
+      })
     })
     return {}
   },
