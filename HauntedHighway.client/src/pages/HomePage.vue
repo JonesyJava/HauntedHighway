@@ -2,7 +2,7 @@
   <div class="container-fluid bg-image height">
     <div class="row justify-content-center">
       <div class="col-12 text-center">
-        <h1 class="glitch"
+        <h1 class="glitch mt-5"
             data-text="Haunted Highway"
         >
           Haunted Highway
@@ -10,17 +10,14 @@
         <span class="sub ">hauntfest</span>
       </div>
     </div>
-    <div class="row  align-items-center">
-      <!-- <div class="col-12 text-center">
-        <button class="btn btn-warning w-25">
-          Login
-        </button>
+    <div class="row align-items-center">
+      <div class="col-12 text-center">
+        <a href="#" class="arrow-container">
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+        </a>
       </div>
-      <div class="col-12 text-center ">
-        <button class="btn btn-danger w-25">
-          Create Account
-        </button>
-      </div> -->
     </div>
   </div>
 </template>
@@ -34,7 +31,65 @@ export default {
 <style scoped lang="scss">
 
 .height{
-  height: 60vh;
+  height: 80vh;
+}
+
+// <---------------------------------------Arrow css------------------------------------------------------>
+.arrow-container {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+}
+.arrow-container:hover {
+  cursor: pointer;
+}
+.arrow-container:hover .arrow {
+  top: 50%;
+}
+.arrow-container:hover .arrow:before {
+  transform: translate(-50%, -50%) rotateZ(-30deg);
+}
+.arrow-container:hover .arrow:after {
+  transform: translate(-50%, -50%) rotateZ(30deg);
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  transition: all 0.4s ease;
+}
+.arrow:before, .arrow:after {
+  transition: all 0.4s ease;
+  content: "";
+  display: block;
+  position: absolute;
+  transform-origin: bottom right;
+  background: #fff;
+  width: 4px;
+  height: 50px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+  background: red;
+}
+.arrow:after {
+  transform-origin: bottom left;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.arrow:nth-child(1) {
+  opacity: 0.3;
+  top: 35%;
+}
+.arrow:nth-child(2) {
+  opacity: 0.6;
+  top: 55%;
+}
+.arrow:nth-child(3) {
+  opacity: 0.9;
+  top: 75%;
 }
 
 //  <----------------------------------Background css ------------------------------------------------->
