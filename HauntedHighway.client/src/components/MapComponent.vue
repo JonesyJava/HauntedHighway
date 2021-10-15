@@ -1,5 +1,6 @@
 <template>
   <div id="map">
+    <div class="marker"></div>
   </div>
 </template>
 
