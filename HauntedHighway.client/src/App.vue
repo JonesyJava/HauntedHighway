@@ -5,11 +5,11 @@
   <main class="bg-dark">
     <router-view />
   </main>
-  <footer>
+  <!-- <footer>
     <div class="bg-red text-light text-center p-4">
       Made with 💖 by Jonesy and Justin.
     </div>
-  </footer>
+  </footer> -->
 </template>
 
 <script>
