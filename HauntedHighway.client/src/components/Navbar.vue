@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-red px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img
           alt="logo"
-          src="../assets/img/cw-logo.png"
+          src="https://c.tenor.com/YuNLbBGif9IAAAAM/ghost-animation.gif"
           height="45"
         />
       </div>
@@ -24,7 +24,7 @@
       <ul class="navbar-nav me-auto">
         <li>
           <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
-            About
+            Map
           </router-link>
         </li>
       </ul>
@@ -118,4 +118,10 @@ a:hover {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+.bg-red{
+  background-color: rgb(0, 0, 0);
+}
+
+/* Additional Logo */
+/* https://www.logolynx.com/images/logolynx/99/99d3a3fd280787bc4dabc097f0952953.png */
 </style>

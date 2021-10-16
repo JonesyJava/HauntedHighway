@@ -7,16 +7,18 @@
         >
           Haunted Highway
         </h1>
-        <span class="sub ">hauntfest</span>
+        <span class="sub ">Hauntfest</span>
       </div>
     </div>
     <div class="row align-items-center">
       <div class="col-12 text-center">
-        <a href="#" class="arrow-container">
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-        </a>
+        <router-link :to="{name: 'About'}" class="btn">
+          <a href="#" class="arrow-container">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </a>
+        </router-link>
       </div>
     </div>
   </div>
