@@ -51,7 +51,24 @@ export class MapService {
         logger.error('[Layers Error]', error)
       }
     })
+
     this.map = map
+
+    map.on('click', ({ point }) => {
+      // If the user clicked on one of your markers, get its information.
+      const features = map.queryRenderedFeatures(point, {
+        layers: ['point'] // replace with your layer name
+      })
+      if (!features.length) {
+        return
+      }
+      const feature = features[0]
+      new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+    `<h3 class="forest text-shadow">${feature.properties.location}</h3><p>${feature.properties.description}</p>`
+        ).addTo(map)
+    })
   }
 
   saveMap() {
