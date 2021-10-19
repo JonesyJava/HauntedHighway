@@ -23,14 +23,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
+          <router-link :to="{ name: 'About' }" class="btn text-danger lighten-30 selectable text-uppercase">
             Map
           </router-link>
         </li>
       </ul>
       <span class="navbar-text">
         <button
-          class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0"
+          class="btn selectable text-danger lighten-30 text-uppercase my-2 my-lg-0"
           @click="login"
           v-if="!user.isAuthenticated"
         >
@@ -50,7 +50,7 @@
               height="40"
               class="rounded"
             />
-            <span class="mx-3 text-success lighten-30">{{ user.name }}</span>
+            <span class="mx-3 text-danger lighten-30">{{ user.name }}</span>
           </div>
           <div
             class="dropdown-menu p-0 list-group w-100"
@@ -114,7 +114,7 @@ a:hover {
   text-transform: uppercase;
 }
 .navbar-nav .router-link-exact-active{
-  border-bottom: 2px solid var(--bs-success);
+  border-bottom: 2px solid #9e0000;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

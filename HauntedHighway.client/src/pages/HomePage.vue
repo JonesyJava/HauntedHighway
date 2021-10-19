@@ -97,7 +97,7 @@ export default {
 //  <----------------------------------Background css ------------------------------------------------->
 
 .bg-image{
-   background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://wallpaperfx.com/view_image/a-haunted-house-movie-1920x1080-wallpaper-16780.jpg");
+   background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.5)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://images7.alphacoders.com/929/thumb-350-929881.jpg");
   background-size: cover;
   background-position: center;
 }

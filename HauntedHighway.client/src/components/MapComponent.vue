@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#map { position: absolute; width: 95%; height: 80%; }
+#map { position: absolute; width: 95%; height: 80%; border: 1px solid #8d6398;}
 
 </style>
 
