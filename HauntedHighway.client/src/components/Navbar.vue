@@ -4,7 +4,7 @@
       <div class="d-flex flex-column align-items-center">
         <img
           alt="logo"
-          src="https://c.tenor.com/YuNLbBGif9IAAAAM/ghost-animation.gif"
+          src="Photos/Ghost-Racer.png"
           height="45"
         />
       </div>

@@ -5,11 +5,17 @@
   <main class="bg-dark">
     <router-view />
   </main>
-  <!-- <footer class=""> -->
-  <!-- <div class="bg-red text-light text-center p-4">
-      Made with 💖 by Jonesy and Justin.
-    </div> -->
-  <!-- </footer> -->
+  <footer class="container-fluid d-flex bg-dark py-1">
+    <div class="">
+      <i class="mdi mdi-shield-account mx-2 btn footer-buttons"></i>
+
+      <i class="mdi mdi-shield-check mx-2 btn footer-buttons"></i>
+
+      <i class="mdi mdi-shield-cross mx-2 btn footer-buttons"></i>
+
+      <i class="mdi mdi-shield-star mx-2 btn footer-buttons"></i>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -29,4 +35,12 @@ export default {
 .bg-red{
     background-color: IndianRed;
 }
+.mdi{
+  font-size: 40px !important;
+}
+.footer-buttons{
+  color: #8d6398;
+  text-shadow: -0.5px 2px #990000;
+}
+
 </style>

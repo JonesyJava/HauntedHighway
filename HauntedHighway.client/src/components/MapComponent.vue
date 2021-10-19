@@ -60,7 +60,7 @@ export default {
 }
 
 .mapboxgl-popup-content{
-  padding: 0;
+  padding: 4px;
 }
 
 .mapboxgl-popup-close-button{
@@ -72,8 +72,8 @@ export default {
 text-shadow: 0px 1px 5px black;
 color: white;
 background-image: url('https://images.unsplash.com/photo-1534193708707-6be94c4f67d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
-padding-top: 10px;
-height: 50px;
+padding-top: 5px;
+height: 70px;
 text-align: center;
 
 }
