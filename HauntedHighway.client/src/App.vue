@@ -2,10 +2,10 @@
   <header>
     <Navbar />
   </header>
-  <main class="bg-dark">
+  <main class="bg-black">
     <router-view />
   </main>
-  <footer class="container-fluid d-flex bg-dark py-1">
+  <footer class="container-fluid d-flex bg-black pb-3">
     <div class="">
       <i class="mdi mdi-shield-account mx-2 btn footer-buttons"></i>
 
@@ -42,5 +42,4 @@ export default {
   color: #8d6398;
   text-shadow: -0.5px 2px #990000;
 }
-
 </style>
