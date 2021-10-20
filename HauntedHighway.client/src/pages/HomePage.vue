@@ -12,6 +12,11 @@
     </div>
     <div class="row align-items-center">
       <div class="col-12 text-center">
+        <p>...or see all hauntings.</p>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-12 text-center">
         <router-link :to="{name: 'About'}" class="btn">
           <a href="#" class="arrow-container">
             <div class="arrow"></div>
