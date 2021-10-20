@@ -1,16 +1,5 @@
-CodeWorks Vue Starter
-=====================
-This template is designed to help get students started building vue applications
+MAPBOX REFERENCES
 
-## Legal Overview
+-https://docs.mapbox.com/mapbox-gl-js/example/geojson-line/
 
-The content under the CodeWorks®, LLC Organization and all of the individual repos are solely intended for use by CodeWorks Instruction to deliver Educational content to CodeWorks Students.
-
----
-
-## Copyright
-
-© CodeWorks® LLC, 2021. Unauthorized use and/or duplication of this material without express and written permission from CodeWorks, LLC is strictly prohibited.
-
-
-<img src="https://bcw.blob.core.windows.net/public/img/7815839041305055" width="125">
+https://api.mapbox.com/directions/v5/mapbox/driving/13.43,52.51;13.42,52.5;13.41,52.5?radiuses=40;;100&steps=true&voice_instructions=true&banner_instructions=true&geometries=polyline6&access_token=pk.eyJ1Ijoiam9uZXN5amF2YSIsImEiOiJja3VyNXdiOG0wamtwMm9wandzY2dzN2JqIn0.chUhEV5TGD43wacx_ktejg

@@ -31,6 +31,7 @@ export default {
       })
     })
 
+    // NOTE timing issues here, had to set a timeout so that we wouldn't loadMapSource until the map is defined
     function setMapData(data) {
       if (!map) {
         return setTimeout(() => setMapData(data), 100)

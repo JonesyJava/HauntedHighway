@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // resolve: { conditions: ['module', 'jsnext:main', 'jsnext', 'require'] },
   plugins: [vue()],
   build: {
     outDir: 'docs',
@@ -11,4 +12,5 @@ export default defineConfig({
   server: {
     port: 8080
   }
-})
+}
+)
