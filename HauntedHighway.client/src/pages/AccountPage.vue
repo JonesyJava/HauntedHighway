@@ -1,5 +1,5 @@
 <template>
-  <div class="about text-center">
+  <div class="about text-center text-color">
     <h1>Welcome {{ account.name }}</h1>
     <img class="rounded" :src="account.picture" alt="" />
     <p>{{ account.email }}</p>
@@ -22,5 +22,8 @@ export default {
 <style scoped>
 img {
   max-width: 100px;
+}
+.text-color{
+  color: rgb(243, 72, 157);
 }
 </style>

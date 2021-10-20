@@ -7,7 +7,7 @@
   </main>
   <footer class="container-fluid d-flex bg-black pb-3">
     <div class="">
-      <i class="mdi mdi-shield-account mx-2 btn footer-buttons"></i>
+      <i class="mdi mdi-shield-account mx-2 btn footer-buttons" @click="goToProfile"></i>
 
       <i class="mdi mdi-shield-check mx-2 btn footer-buttons"></i>
 
@@ -21,11 +21,16 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
+import { useRouter } from 'vue-router'
 export default {
   name: 'App',
   setup() {
+    const router = useRouter()
     return {
-      appState: computed(() => AppState)
+      appState: computed(() => AppState),
+      async goToProfile() {
+        router.push({ name: 'Account' })
+      }
     }
   }
 }
