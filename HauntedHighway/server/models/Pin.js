@@ -13,6 +13,7 @@ const PinSchema = new Schema(
     latitude: { type: String, required: true },
     city_longitude: { type: String },
     city_latitude: { type: String },
+    backgroundImage: { type: String, default: 'https://i.pinimg.com/originals/fa/c0/83/fac0839e4b1c6e67d254ef908c90f4ef.gif' },
     selectionId: { type: Schema.Types.ObjectId, required: true }
 
   }
