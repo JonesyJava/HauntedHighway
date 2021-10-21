@@ -5,7 +5,7 @@ import BaseController from '../utils/BaseController'
 
 export class SelectionsController extends BaseController {
   constructor() {
-    super('api/selection')
+    super('api/selections')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getAllSelections)
