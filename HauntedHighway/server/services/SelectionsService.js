@@ -1,3 +1,4 @@
+import { ADMIN_ID } from '../../.envAdmin'
 import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 class SelectionsService {
@@ -18,7 +19,7 @@ class SelectionsService {
   }
 
   async create(body) {
-    if (body.creatorId.toSting() === '61719681fa50c73865c870d5') {
+    if (body.creatorId.toSting() === ADMIN_ID) {
       const created = await dbContext.Selections.create(body)
       if (!created) {
         throw new BadRequest('You do not have the ability to post a selection')
