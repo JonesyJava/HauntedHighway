@@ -24,8 +24,8 @@ const routes = [
   },
   {
     path: '/hauntings',
-    name: 'SelectionPage',
-    component: loadPage('SelectionPage')
+    name: 'SelectionsPage',
+    component: loadPage('SelectionsPage')
   }
 ]
 

@@ -1,27 +1,36 @@
 <template>
   <div class="col-12">
-    <div class="card mt-3">
-      <div class="card-body">
+    <div class="card mt-3 backgroundImage">
+      <div class="card-body text-light">
         <h5 class="card-title">
-          All Hauntings
+          {{ selectionProp.title }}
         </h5>
         <p class="card-text">
-          Browse all 10,000 plus haunted locations we offer
+          {{ selectionProp.description }}
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary w-100">Select</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core'
+import { Selection } from '../models/Selection'
 export default {
-  setup() {
-    return {}
+  props: { selectionProp: { type: Selection, default: new Selection({}) } },
+  setup(props) {
+    return {
+      image: computed(() => `url('${props.selectionProp.backgoundImage}')`)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.backgroundImage{
+  background-image: v-bind(image);
+  background-size: cover;
+  background-position: center;
+}
 </style>
