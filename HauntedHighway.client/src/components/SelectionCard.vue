@@ -8,7 +8,11 @@
         <p class="card-text">
           {{ selectionProp.description }}
         </p>
-        <a href="#" class="btn btn-primary w-100">Select</a>
+        <router-link :to="{name: 'About'}">
+          <button class="btn btn-primary w-100" @click="getPins">
+            Select
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -17,11 +21,20 @@
 <script>
 import { computed } from '@vue/runtime-core'
 import { Selection } from '../models/Selection'
+import { logger } from '../utils/Logger'
+import { selectionsService } from '../services/SelectionsService'
 export default {
   props: { selectionProp: { type: Selection, default: new Selection({}) } },
   setup(props) {
     return {
-      image: computed(() => `url('${props.selectionProp.backgoundImage}')`)
+      image: computed(() => `url('${props.selectionProp.backgoundImage}')`),
+      getPins() {
+        try {
+          selectionsService.getPins(props.selectionProp.id)
+        } catch (error) {
+          logger.error(error)
+        }
+      }
     }
   }
 }

@@ -1,12 +1,19 @@
 <template>
   <div class="container-fluid mt-3">
-    <MapComponent />
+    <MapComponent :pins="pins" />
   </div>
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core'
+import { AppState } from '../AppState'
 export default {
-  name: 'AboutPage'
+  name: 'AboutPage',
+  setup() {
+    return {
+      pins: computed(() => AppState.pins)
+    }
+  }
 }
 </script>
 

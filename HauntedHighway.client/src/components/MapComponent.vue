@@ -7,28 +7,28 @@
 import { onMounted } from '@vue/runtime-core'
 import { MapService } from '../services/MapService'
 export default {
-  setup() {
+  props: { pins: { type: Array, required: true } },
+  setup(props) {
     let map = null
     onMounted(() => {
       map = new MapService()
+      // fetch('locations.json').then(res => res.json()).then(data => {
+      const x = props.pins.map(l => {
+        return {
+          type: 'Feature',
+          properties: {
+            ...l,
+            'marker-symbol': 'ghostMarker'
 
-      fetch('Locations.json').then(res => res.json()).then(data => {
-        const x = data.map(l => {
-          return {
-            type: 'Feature',
-            properties: {
-              ...l,
-              'marker-symbol': 'ghostMarker'
-
-            },
-            geometry: {
-              type: 'Point',
-              coordinates: [l.longitude, l.latitude]
-            }
+          },
+          geometry: {
+            type: 'Point',
+            coordinates: [l.longitude, l.latitude]
           }
-        })
-        setMapData(x)
+        }
       })
+      setMapData(x)
+      // })
     })
 
     // NOTE timing issues here, had to set a timeout so that we wouldn't loadMapSource until the map is defined
