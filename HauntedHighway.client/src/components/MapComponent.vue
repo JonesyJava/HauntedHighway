@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { onMounted } from '@vue/runtime-core'
+import { onMounted, watchEffect } from '@vue/runtime-core'
 import { MapService } from '../services/MapService'
 export default {
   props: { pins: { type: Array, required: true } },
@@ -12,6 +12,8 @@ export default {
     let map = null
     onMounted(() => {
       map = new MapService()
+    })
+    watchEffect(() => {
       // fetch('locations.json').then(res => res.json()).then(data => {
       const x = props.pins.map(l => {
         return {
