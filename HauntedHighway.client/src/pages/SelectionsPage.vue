@@ -10,6 +10,7 @@
 import { computed, onMounted } from '@vue/runtime-core'
 import { selectionsService } from '../services/SelectionsService'
 import { AppState } from '../AppState'
+
 export default {
   setup() {
     onMounted(async() => {
