@@ -19,7 +19,7 @@ class SelectionsService {
   }
 
   async create(body) {
-    if (body.creatorId.toSting() === ADMIN_ID) {
+    if (body.creatorId === ADMIN_ID) {
       const created = await dbContext.Selections.create(body)
       if (!created) {
         throw new BadRequest('You do not have the ability to post a selection')
