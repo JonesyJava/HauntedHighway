@@ -6,7 +6,7 @@ import { logger } from '../utils/Logger'
 
 export class MapService {
   constructor() {
-    // <---------------------------------Establishes Map --------------------------------------->
+    // <--------------------------Establishes Map--------------------------------------->
     mapboxgl.accessToken = mapKey
     const map = new mapboxgl.Map({
       container: 'map', // container ID
@@ -103,13 +103,6 @@ export class MapService {
       }
     })
 
-    // map.addControl(
-    //   new MapboxDirections({
-    //     accessToken: mapKey
-    //   }),
-    //   'top-left'
-    // )
-
     this.map = map
 
     map.on('click', ({ point }) => {
@@ -124,7 +117,11 @@ export class MapService {
       new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
-    `<h3 class="forest text-shadow">${feature.properties.location}</h3><p>${feature.properties.description}</p>`
+    `<h3 class="forest text-shadow">${feature.properties.location}</h3><p>${feature.properties.description}</p>
+    <div class="w-100 text-center">
+    <button class="btn btn-dark my-2" onclick="console.log('clicked')">DETAILS</button>
+
+    </div>`
         ).addTo(map)
     })
   }

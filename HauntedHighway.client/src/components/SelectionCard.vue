@@ -8,7 +8,7 @@
         <p class="card-text">
           {{ selectionProp.description }}
         </p>
-        <router-link :to="{name: 'About'}">
+        <router-link :to="{name: 'MapPage'}">
           <button class="btn btn-primary w-100" @click="getPins">
             Select
           </button>

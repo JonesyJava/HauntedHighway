@@ -17,13 +17,13 @@
     </div>
     <div class="row align-items-center">
       <div class="col-12 text-center">
-        <router-link :to="{name: 'About'}" class="btn">
+        <!-- <router-link :to="{name: 'About'}" class="btn">
           <a href="#" class="arrow-container">
             <div class="arrow"></div>
             <div class="arrow"></div>
             <div class="arrow"></div>
           </a>
-        </router-link>
+        </router-link> -->
       </div>
     </div>
   </div>

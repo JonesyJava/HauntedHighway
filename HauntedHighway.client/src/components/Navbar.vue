@@ -21,13 +21,6 @@
       <span class="navbar-toggler-icon" />
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
-        <li>
-          <router-link :to="{ name: 'About' }" class="btn text-danger lighten-30 selectable text-uppercase">
-            Map
-          </router-link>
-        </li>
-      </ul>
       <span class="navbar-text">
         <button
           class="btn selectable text-danger lighten-30 text-uppercase my-2 my-lg-0"
